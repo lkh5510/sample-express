@@ -4,6 +4,10 @@ UID = "OP-${env.BUILD_ID}"
 
 NODE_VER = "node10.16.3"
 
+def isBranch(def branchName) {
+	return env.BRANCH_NAME == branchName
+}
+
 def isMasterBranch() {
 	return isBranch("master")
 }
