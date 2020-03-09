@@ -29,7 +29,7 @@ node {
 			}
 
 			stage('Deploy') {
-				withCredentials([usernamePassword(credentialsId: 'op-ssh-root', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+				withCredentials([usernamePassword(credentialsId: 'op_ssh_root', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 					def remote = [:]
 					remote.name = 'op'
 					remote.host = OP_HOST
