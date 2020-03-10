@@ -1,11 +1,10 @@
-OP_HOST = '34.209.219.139'
-OP_PORT = 55326
-UID = "OP-${env.BUILD_ID}"
-
+OP_HOST = '54.186.149.168'
+OP_PORT = 53598
+UID = "OP-${BUILD_ID}"
 NODE_VER = "node10.16.3"
 
 def isBranch(def branchName) {
-	return env.BRANCH_NAME == branchName
+	return BRANCH_NAME == branchName
 }
 
 def isMasterBranch() {
@@ -24,8 +23,8 @@ node {
 
 			stage('Build') {
 				BUILD_ZIP_NAME = "${UID}.zip"
-				BUILD_ZIP_PATH = "${env.WORKSPACE}/${BUILD_ZIP_NAME}"
-				zip dir: env.WORKSPACE, glob: '', zipFile: BUILD_ZIP_PATH
+				BUILD_ZIP_PATH = "${WORKSPACE}/${BUILD_ZIP_NAME}"
+				zip dir: WORKSPACE, glob: '', zipFile: BUILD_ZIP_PATH
 			}
 
 			stage('Deploy') {
